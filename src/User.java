@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class User {
     private final int userID;
     private String userName;
@@ -22,7 +24,10 @@ public class User {
     public void setPassword(String password) {this.password = password;}
     public void setUserEmail(String userEmail) {this.userEmail = userEmail;}
 
-    public void generateRandomId() {
-        //TODO add random ID generator with checking for existing ID
+    public int generateRandomId() {
+        //TODO add ID checking for if ID exists
+        Random randIdGenerator = new Random();
+
+        return 100000 + randIdGenerator.nextInt(900000);
     }
 }
